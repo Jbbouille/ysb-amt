@@ -1,4 +1,5 @@
 export interface Question {
+  'eligible': string;
   'Are you a member of a Civil Society Organisation, NGO, diaspora organisation, etc.?': string;
   'C-1 Please rate your language skills in ANY OTHER LANGUAGE than English: (according to the language self-assessment grid) Language 1:Language': string;
   'C-1 Please rate your language skills in ANY OTHER LANGUAGE than English: (according to the language self-assessment grid) Language 1:Level (A1, A2, B1, B2, C1, C2)': string;
@@ -47,7 +48,7 @@ export interface Question {
   'OPTIONAL - You have chosen "other". Please specify:': string;
   'Please describe briefly your areas of interest:': string;
   'Please describe briefly your interest and/or expertise:': string;
-  'Please indicate your birthday*:': string;
+  'Please indicate your birthday*:': Date;
   'Please list all the Civil Society Organisations and other relevant organisations/programmes (e.g. UNICEF, etc.) that you have been involved in.': string;
   'Please mention the city where you were born.': string;
   'Please upload your signed Nomination Letter (pdf-format) here:': string;

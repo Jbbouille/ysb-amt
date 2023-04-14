@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@picocss/pico": "^1.5.9",
+    "franc-min": "^6.1.0",
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.19.2/xlsx-0.19.2.tgz"
   }
 }

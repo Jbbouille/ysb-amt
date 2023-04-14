@@ -1,15 +1,17 @@
 <script lang="ts">
   import type {Question} from './types';
-  import Chooser from './Chooser.svelte';
-  import Line from './Line.svelte';
+  import Uploader from './Uploader.svelte';
+  import Downloader from './Downloader.svelte';
+  import Encryptor from './Encryptor.svelte';
+  import Transformer from './Transformer.svelte';
 
   let questions: Question[] = [];
 </script>
 
 <main class="container">
-  <h1>Sorter</h1>
-  <Chooser bind:questions />
-  {#each questions as line}
-    <Line bind:line />
-  {/each}
+  <h1>L'app d'Edouard</h1>
+  <Uploader bind:questions />
+  <Encryptor bind:questions />
+  <Transformer bind:questions />
+  <Downloader bind:questions />
 </main>

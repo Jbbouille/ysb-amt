@@ -13,11 +13,14 @@
       reader.readAsArrayBuffer(file);
       reader.onload = readerEvent => {
         const content = readerEvent.target.result;
-        const wb = read(content);
-        questions = utils.sheet_to_json<Question>(wb.Sheets[wb.SheetNames[0]]);
+        const wb = read(content, {dateNF: 'dd/mm/yyyy', cellDates: true});
+        questions = utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {dateNF: 'dd/mm/yyyy'});
       }
     }
   });
 </script>
 
-<input type="file" id="questioner" name="questions" accept=".xlsx">
+<section>
+  <h2>Fichier</h2>
+  <input type="file" id="questioner" name="questions" accept=".xlsx,.xls">
+</section>
