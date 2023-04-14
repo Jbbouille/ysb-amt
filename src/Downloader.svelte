@@ -19,7 +19,7 @@
     }
 </style>
 
-<section>
+<div>
   <h2>Télécharger</h2>
   <button on:click={downloadFile} disabled={!questions || !questions.length ? 'disabled' : null} data-theme="green">Save</button>
-</section>
+</div>

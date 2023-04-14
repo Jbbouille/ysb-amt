@@ -20,7 +20,7 @@
   });
 </script>
 
-<section>
+<div>
   <h2>Fichier</h2>
   <input type="file" id="questioner" name="questions" accept=".xlsx,.xls">
-</section>
+</div>

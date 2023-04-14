@@ -9,7 +9,7 @@
 </script>
 
 <main class="container">
-  <h1>L'app d'Edouard</h1>
+  <h1>YSB Applications Management Tool</h1>
   <Uploader bind:questions />
   <Encryptor bind:questions />
   <Transformer bind:questions />

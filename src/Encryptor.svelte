@@ -71,7 +71,7 @@
     }
 </style>
 
-<section>
+<div>
   <h2>Chiffrement</h2>
   <div class="grid">
     <button on:click={encryptData} role="button" disabled={!questions || !questions.length ? 'disabled' : null} aria-busy={loading ? 'true' : 'false'}>
@@ -86,4 +86,4 @@
     </button>
     <input type="text" bind:value={exportedKeyToDecrypt}>
   </div>
-</section>
+</div>

@@ -77,7 +77,7 @@
   }
 </script>
 
-<section>
+<div>
   <h2>Transformation</h2>
   <div class="grid">
     <div>
@@ -89,4 +89,4 @@
       {/each}
     </div>
   </div>
-</section>
+</div>
