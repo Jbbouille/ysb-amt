@@ -70,8 +70,8 @@
     donePhases = [...donePhases, 'Rendre ineligible les candidatures avec informations manquantes.'];
     wrongLanguage();
     donePhases = [...donePhases, 'Rendre ineligible les candidatures avec la mauvaise langue.'];
-    notEnoughWords(10);
-    donePhases = [...donePhases, 'Rendre ineligible les candidatures avec moins de 10 mots.'];
+    notEnoughWords(20);
+    donePhases = [...donePhases, 'Rendre ineligible les candidatures avec moins de 20 mots.'];
 
     loading = false;
   }
