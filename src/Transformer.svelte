@@ -57,6 +57,9 @@
   function notEnoughWords(minWords: number) {
     questions = questions.map(q => {
       const e1 = q['E-1 What is your experience in youth participation and empowerment at local, national, international level?'];
+      if (e1.includes("https://") || e1.includes("http://")) {
+        return q;
+      }
       let size = e1.split(/\W+/).filter(w => !isStopWord(w)).length;
       if (size < minWords) {
         updateEligibleAccordingly(`Not enough words: ${size}`, q);
