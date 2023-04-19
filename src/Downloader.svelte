@@ -3,10 +3,28 @@
   import type {Question} from './types';
 
   export let questions: Question[] = [];
+  export let chunks = 1;
+
+  function splitToChunks<T>(array: T[], parts: number): T[][] {
+    const result: T[][] = [];
+    for (let i = parts; i > 0; i--) {
+      result.push(array.splice(0, Math.ceil(array.length / i)));
+    }
+    return result;
+  }
 
   function downloadFile() {
-    const workSheet = utils.json_to_sheet<Question>(questions, {cellDates: true, dateNF: 'dd/mm/yyyy'});
-    writeFile({Sheets: {'Content': workSheet}, bookType: 'xlsx', SheetNames: ['Content']}, 'out.xlsx');
+    if (chunks === 1) {
+      const workSheet = utils.json_to_sheet<Question>(questions, {cellDates: true, dateNF: 'dd/mm/yyyy'});
+      writeFile({Sheets: {'Content': workSheet}, bookType: 'xlsx', SheetNames: ['Content']}, 'out.xlsx');
+      return;
+    }
+    const splitQuestions = splitToChunks(questions, chunks);
+    for (let i = 0; i < splitQuestions.length; i++){
+      const c = splitQuestions[i];
+      const workSheet = utils.json_to_sheet<Question>(c, {cellDates: true, dateNF: 'dd/mm/yyyy'});
+      writeFile({Sheets: {'Content': workSheet}, bookType: 'xlsx', SheetNames: ['Content']}, `out-${i + 1}.xlsx`);
+    }
   }
 </script>
 

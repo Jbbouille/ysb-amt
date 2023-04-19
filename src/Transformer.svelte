@@ -19,20 +19,25 @@
     'Which country are you currently living in?',
   ];
 
-  function updateEligibleAcordingly(reasons: string, q: Question) {
-    q.eligible = q.eligible + (reasons ? ` | ${reasons}` : '');
+  function updateEligibleAccordingly(reason: string, q: Question) {
+    if (!q.eligible && reason) {
+      q.eligible = reason;
+      return;
+    }
+    if (q.eligible && reason) {
+      q.eligible = `${q.eligible} | ${reason}`;
+    }
   }
 
   function missingInformation() {
     questions = questions.map(q => {
-      q.eligible = '';
       const reasons = [];
       reasonIneligible.forEach(r => {
         if (!q[r]) {
-          reasons.push(`Missing '${r}'`);
+          reasons.push(`Missing information in '${r}'`);
         }
       });
-      updateEligibleAcordingly(reasons.join(' '), q);
+      updateEligibleAccordingly(reasons.join(' '), q);
       return q;
     })
   }
@@ -42,7 +47,7 @@
       const e1 = q['E-1 What is your experience in youth participation and empowerment at local, national, international level?'];
       const lang = franc(e1);
       if (lang != 'eng') {
-        updateEligibleAcordingly(`Wrong language '${lang}'`, q);
+        updateEligibleAccordingly(`Wrong language: ${lang}`, q);
       }
       return q;
     })
@@ -54,7 +59,7 @@
       const e1 = q['E-1 What is your experience in youth participation and empowerment at local, national, international level?'];
       let size = e1.split(/\W+/).filter(w => !isStopWord(w)).length;
       if (size < minWords) {
-        updateEligibleAcordingly('Not enough words in E1', q);
+        updateEligibleAccordingly(`Not enough words: ${size}`, q);
       }
       return q;
     });

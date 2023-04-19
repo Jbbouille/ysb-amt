@@ -4,8 +4,10 @@
   import Downloader from './Downloader.svelte';
   import Encryptor from './Encryptor.svelte';
   import Transformer from './Transformer.svelte';
+  import Splitter from './Splitter.svelte';
 
   let questions: Question[] = [];
+  let chunks = 1;
 </script>
 
 <main class="container">
@@ -13,5 +15,6 @@
   <Uploader bind:questions />
   <Encryptor bind:questions />
   <Transformer bind:questions />
-  <Downloader bind:questions />
+  <Splitter bind:questions bind:chunks />
+  <Downloader bind:questions bind:chunks />
 </main>
