@@ -1,8 +1,4 @@
 export interface Question {
-  '#Id': string;
-  'eligible': string;
-  'totalNotationIndividual': number;
-  'totalNotationOrganisation': number;
   'Can you confirm that you meet the criteria listed above?': string;
   'Which option are you applying for?': string;
   'Name': string;
@@ -31,10 +27,10 @@ export interface Question {
   'O-7 Please explain briefly how your organisation has contributed to policy processes (e.g. consultation, advocacy etc.), in particular on youth.': string;
   'O-8 Please give an example of how your organisation has successfully contributed to strengthening youth participation (e.g. campaigns, outreach to vulnerable youth, etc.).': string;
   'O-9 Please briefly explain which regions, countries, continents your organisation is covering through its activities.': string;
-  'M-1 How many individual members does your organisation have?': string;
-  'M-2 Please describe the profile of your individual members? (e.g. age range, general background, interest and expertise)': string;
-  'M-3 As a network (or similar), how many organisations are member of your network?': string;
-  'M-4 As a network (or similar), please briefly describe the profile of your member organisations / groups (e.g. age range, general background, interest and expertise)': string;
+  'D-1 How many individual members does your organisation have?': string;
+  'D-2 Please describe the profile of your individual members? (e.g. age range, general background, interest and expertise)': string;
+  'D-3 As a network (or similar), how many organisations are member of your network?': string;
+  'D-4 As a network (or similar), please briefly describe the profile of your member organisations / groups (e.g. age range, general background, interest and expertise)': string;
   'M-5 Is your organisation member of a larger network?': string;
   'M-5 Is your organisation member of a larger network? - If YES, please specify:': string;
   'What is the highest education level you have completed?': string;
@@ -70,4 +66,8 @@ export interface Question {
   'I identify as a person with:': string;
   'OPTIONAL - You have chosen "other". Please specify:': string;
   'OPTIONAL - Is there anything you would like to add to your application?': string;
+  '#Id': string;
+  'eligible': string;
+  'totalNotationIndividual': number;
+  'totalNotationOrganisation': number;
 }

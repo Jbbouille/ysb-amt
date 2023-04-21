@@ -78,10 +78,6 @@
   function reorderLines() {
     questions = questions.map((q) =>
       ({
-        '#Id': q['#Id'],
-        'eligible': q['eligible'],
-        'totalNotationIndividual': 0,
-        'totalNotationOrganisation': 0,
         'Can you confirm that you meet the criteria listed above?': q['Can you confirm that you meet the criteria listed above?'],
         'Which option are you applying for?': q['Which option are you applying for?'],
         'Name': q['Name'],
@@ -110,10 +106,10 @@
         'O-7 Please explain briefly how your organisation has contributed to policy processes (e.g. consultation, advocacy etc.), in particular on youth.': q['O-7 Please explain briefly how your organisation has contributed to policy processes (e.g. consultation, advocacy etc.), in particular on youth.'],
         'O-8 Please give an example of how your organisation has successfully contributed to strengthening youth participation (e.g. campaigns, outreach to vulnerable youth, etc.).': q['O-8 Please give an example of how your organisation has successfully contributed to strengthening youth participation (e.g. campaigns, outreach to vulnerable youth, etc.).'],
         'O-9 Please briefly explain which regions, countries, continents your organisation is covering through its activities.': q['O-9 Please briefly explain which regions, countries, continents your organisation is covering through its activities.'],
-        'M-1 How many individual members does your organisation have?': q['M-1 How many individual members does your organisation have?'],
-        'M-2 Please describe the profile of your individual members? (e.g. age range, general background, interest and expertise)': q['M-2 Please describe the profile of your individual members? (e.g. age range, general background, interest and expertise)'],
-        'M-3 As a network (or similar), how many organisations are member of your network?': q['M-3 As a network (or similar), how many organisations are member of your network?'],
-        'M-4 As a network (or similar), please briefly describe the profile of your member organisations / groups (e.g. age range, general background, interest and expertise)': q['M-4 As a network (or similar), please briefly describe the profile of your member organisations / groups (e.g. age range, general background, interest and expertise)'],
+        'D-1 How many individual members does your organisation have?': q['D-1 How many individual members does your organisation have?'],
+        'D-2 Please describe the profile of your individual members? (e.g. age range, general background, interest and expertise)': q['D-2 Please describe the profile of your individual members? (e.g. age range, general background, interest and expertise)'],
+        'D-3 As a network (or similar), how many organisations are member of your network?': q['D-3 As a network (or similar), how many organisations are member of your network?'],
+        'D-4 As a network (or similar), please briefly describe the profile of your member organisations / groups (e.g. age range, general background, interest and expertise)': q['D-4 As a network (or similar), please briefly describe the profile of your member organisations / groups (e.g. age range, general background, interest and expertise)'],
         'M-5 Is your organisation member of a larger network?': q['M-5 Is your organisation member of a larger network?'],
         'M-5 Is your organisation member of a larger network? - If YES, please specify:': q['M-5 Is your organisation member of a larger network? - If YES, please specify:'],
         'What is the highest education level you have completed?': q['What is the highest education level you have completed?'],
@@ -149,6 +145,10 @@
         'I identify as a person with:': q['I identify as a person with:'],
         'OPTIONAL - You have chosen "other". Please specify:': q['OPTIONAL - You have chosen "other". Please specify:'],
         'OPTIONAL - Is there anything you would like to add to your application?': q['OPTIONAL - Is there anything you would like to add to your application?'],
+        '#Id': q['#Id'],
+        'eligible': q['eligible'],
+        'totalNotationIndividual': 0,
+        'totalNotationOrganisation': 0,
     })
     )
   }
