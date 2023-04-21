@@ -15,6 +15,5 @@
   <Uploader bind:questions />
   <Encryptor bind:questions />
   <Transformer bind:questions />
-  <Splitter bind:questions bind:chunks />
   <Downloader bind:questions bind:chunks />
 </main>

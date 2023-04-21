@@ -2,6 +2,7 @@
   import {onMount} from 'svelte';
   import {read, utils} from 'xlsx';
   import type {Question} from './types';
+  import {headers} from './utils';
 
   export let questions: Question[] = [];
 
@@ -14,7 +15,7 @@
       reader.onload = readerEvent => {
         const content = readerEvent.target.result;
         const wb = read(content, {dateNF: 'dd/mm/yyyy', cellDates: true});
-        questions = utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {dateNF: 'dd/mm/yyyy'});
+        questions = utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {header: headers, range:1, dateNF: 'dd/mm/yyyy', defval: ''});
       }
     }
   });
