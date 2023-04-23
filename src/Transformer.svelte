@@ -148,7 +148,7 @@
   }
 
   function orderLinesByDates() {
-    questions = questions.sort((a, b) => new Date(b['Creation date']) - new Date(a['Creation date']));
+    questions = questions.sort((a, b) => new Date(a['Creation date']) - new Date(b['Creation date']));
   }
 
   function transform() {
