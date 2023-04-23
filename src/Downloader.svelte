@@ -15,14 +15,14 @@
 
   function downloadFile() {
     if (chunks === 1) {
-      const workSheet = utils.json_to_sheet<Question>(questions, {cellDates: true, dateNF: 'dd/mm/yyyy'});
+      const workSheet = utils.json_to_sheet<Question>(questions, {cellDates: true, dateNF: 'dd/mm/yyyy hh:mm:ss'});
       writeFile({Sheets: {'Content': workSheet}, bookType: 'xlsx', SheetNames: ['Content']}, 'out.xlsx');
       return;
     }
     const splitQuestions = splitToChunks(questions, chunks);
     for (let i = 0; i < splitQuestions.length; i++){
       const c = splitQuestions[i];
-      const workSheet = utils.json_to_sheet<Question>(c, {cellDates: true, dateNF: 'dd/mm/yyyy'});
+      const workSheet = utils.json_to_sheet<Question>(c, {cellDates: true, dateNF: 'dd/mm/yyyy hh:mm:ss'});
       writeFile({Sheets: {'Content': workSheet}, bookType: 'xlsx', SheetNames: ['Content']}, `out-${i + 1}.xlsx`);
     }
   }

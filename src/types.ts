@@ -66,7 +66,8 @@ export interface Question {
   'I identify as a person with:': string;
   'OPTIONAL - You have chosen "other". Please specify:': string;
   'OPTIONAL - Is there anything you would like to add to your application?': string;
-  '#Id': string;
+  'Contribution ID': string,
+  'Creation date': Date,
   'eligible': string;
   'totalNotationIndividual': number;
   'totalNotationOrganisation': number;

@@ -14,8 +14,8 @@
       reader.readAsArrayBuffer(file);
       reader.onload = readerEvent => {
         const content = readerEvent.target.result;
-        const wb = read(content, {dateNF: 'dd/mm/yyyy', cellDates: true});
-        questions = utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {header: headers, range:1, dateNF: 'dd/mm/yyyy', defval: ''});
+        const wb = read(content, {dateNF: 'dd/mm/yyyy hh:mm:ss', cellDates: true});
+        questions = utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], {header: headers, range:1, dateNF: 'dd/mm/yyyy hh:mm:ss', defval: ''});
       }
     }
   });

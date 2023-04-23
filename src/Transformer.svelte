@@ -68,13 +68,6 @@
     });
   }
 
-  function addAnId() {
-    questions = questions.map((q, i) => {
-      q['#Id'] = `${i}`;
-      return q;
-    })
-  }
-
   function reorderLines() {
     questions = questions.map((q) =>
       ({
@@ -145,12 +138,17 @@
         'I identify as a person with:': q['I identify as a person with:'],
         'OPTIONAL - You have chosen "other". Please specify:': q['OPTIONAL - You have chosen "other". Please specify:'],
         'OPTIONAL - Is there anything you would like to add to your application?': q['OPTIONAL - Is there anything you would like to add to your application?'],
-        '#Id': q['#Id'],
+        'Contribution ID': q['Contribution ID'],
+        'Creation date': q['Creation date'],
         'eligible': q['eligible'],
         'totalNotationIndividual': 0,
         'totalNotationOrganisation': 0,
     })
     )
+  }
+
+  function orderLinesByDates() {
+    questions = questions.sort((a, b) => new Date(b['Creation date']) - new Date(a['Creation date']));
   }
 
   function transform() {
@@ -165,10 +163,10 @@
     donePhases = [...donePhases, 'Rendre ineligible les candidatures avec la mauvaise langue.'];
     notEnoughWords(20);
     donePhases = [...donePhases, 'Rendre ineligible les candidatures avec moins de 20 mots.'];
-    addAnId();
-    donePhases = [...donePhases, 'Ajouter un #Id de ligne.'];
     reorderLines();
     donePhases = [...donePhases, 'Réordonner les colonnes.'];
+    orderLinesByDates();
+    donePhases = [...donePhases, 'Réordonner les lignes par dates.'];
 
     loading = false;
   }

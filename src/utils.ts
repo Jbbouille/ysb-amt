@@ -66,8 +66,9 @@ export const headers = [
   'I identify as a person with:',
   'OPTIONAL - You have chosen "other". Please specify:',
   'OPTIONAL - Is there anything you would like to add to your application?',
-   '#Id',
-   'eligible',
-   'totalNotationIndividual',
-   'totalNotationOrganisation',
+  'Contribution ID',
+  'Creation date',
+  'eligible',
+  'totalNotationIndividual',
+  'totalNotationOrganisation',
 ];
