@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "cp node_modules/@picocss/pico/css/pico.min.css public/ && cp node_modules/@picocss/pico/css/pico.min.css.map public/",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && echo 'ysb-amt.petit.top' > docs/CNAME",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },

@@ -161,7 +161,7 @@
     donePhases = [...donePhases, 'Rendre ineligible les candidatures avec informations manquantes.'];
     wrongLanguage();
     donePhases = [...donePhases, 'Rendre ineligible les candidatures avec la mauvaise langue.'];
-    notEnoughWords(20);
+    notEnoughWords(30);
     donePhases = [...donePhases, 'Rendre ineligible les candidatures avec moins de 20 mots.'];
     reorderLines();
     donePhases = [...donePhases, 'Réordonner les colonnes.'];
